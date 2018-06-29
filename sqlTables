@@ -1,0 +1,50 @@
+CREATE TABLE `POLICY` (
+  `PolicyNumber` Intger,
+  `AccountID` Integer,
+  `PolicyType` varChar(20),
+  `AssetList` IntegerArray,
+  `ClaimList` IntegerArray,
+  `PaymentList` IntegerArray,
+  PRIMARY KEY (`PolicyNumber`),
+  KEY `FK` (`AccountID`, `AssetList`, `ClaimList`, `PaymentList`)
+);
+
+CREATE TABLE `ASSET` (
+  `AssetID` Integer,
+  `AssetType` varChar(20),
+  `Value` Double,
+  `Date` DATE,
+  PRIMARY KEY (`AssetID`)
+);
+
+CREATE TABLE `CLAIM` (
+  `ClaimID` Integer,
+  `ClaimType` varChar(20),
+  `Date` DATE,
+  `LocationX` Double,
+  `LocationY` Double,
+  `Description` varChar(200),
+  PRIMARY KEY (`ClaimID`)
+);
+
+CREATE TABLE `ACCOUNT` (
+  `AccountID` Integer,
+  `Username` varChar(50),
+  `Password` varChar(50),
+  `FirstName` varChar(50),
+  `LastName` varChar(50),
+  `Street` varChar(150),
+  `City` varChar(50),
+  `State` varChar(2),
+  `ZIP` varChar(5),
+  PRIMARY KEY (`AccountID`)
+);
+
+CREATE TABLE `PAYMENT` (
+  `PaymentID` Integer,
+  `Value` Double,
+  `DueDate` DATE,
+  `IsPaid` Boolean,
+  PRIMARY KEY (`PaymentID`)
+);
+
