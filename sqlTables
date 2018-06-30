@@ -1,10 +1,10 @@
 CREATE TABLE `POLICY` (
-  `PolicyNumber` Intger,
+  `PolicyNumber` Integer,
   `AccountID` Integer,
   `PolicyType` varChar(20),
-  `AssetList` IntegerArray,
-  `ClaimList` IntegerArray,
-  `PaymentList` IntegerArray,
+  `AssetList` Integer,
+  `ClaimList` Integer,
+  `PaymentList` Integer,
   PRIMARY KEY (`PolicyNumber`),
   KEY `FK` (`AccountID`, `AssetList`, `ClaimList`, `PaymentList`)
 );
