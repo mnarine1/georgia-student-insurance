@@ -2,7 +2,6 @@
 
 if (isset($_POST['submit'])) {
    include_once 'dbh.inc.php';
-   include_once 'var.inc.php';
 
    $type = $_POST['type'];
    $value = $_POST['value'];
