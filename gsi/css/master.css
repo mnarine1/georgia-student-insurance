@@ -294,5 +294,17 @@ textarea {
 
 h3 {
    font-family: Arial, sans-serif;
-   
+}
+
+input[placeholder="MM"], input[placeholder="YY"] {
+   width: 10%;
+}
+.exp-wrapper span {
+   color: #555;
+   font-size: 20px;
+   font-family: Arial, sans-serif;
+   float: left;
+   margin-right: 83px;
+   margin-left: 10px;
+   line-height: 40px;
 }
