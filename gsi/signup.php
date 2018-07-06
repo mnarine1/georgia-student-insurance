@@ -1,4 +1,5 @@
 <?php
+   $title "Signup";
    include_once 'header.php';
 ?>
 
