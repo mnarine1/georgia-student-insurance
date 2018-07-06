@@ -1,4 +1,5 @@
 <?php
+   $title = "Georgia Student Insurance";
    include_once 'header.php';
 ?>
 
