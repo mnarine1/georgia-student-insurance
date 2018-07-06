@@ -7,7 +7,11 @@
    <head>
       <meta charset="utf-8">
       <link rel="stylesheet" href="css/master.css">
-      <title></title>
+      <?php
+         if (!empty($title)) {
+            echo '<title>'.$title.'</title>';
+         }
+      ?>
    </head>
    <body>
       <header>
@@ -17,7 +21,9 @@
                   <li><a href="index.php">Home</a></li>
                   <?php
                      if (isset($_SESSION['u_id'])) {
-                        echo '<li><a href="assets.php">Assets</a></li>';
+                        echo '<li><a href="assets.php">Assets</a></li>
+                              <li><a href="claims.php">Claims</a></li>
+                              <li><a href="payments.php">Payments</a></li>';
                      }
                   ?>
                </ul>
@@ -42,3 +48,4 @@
             </div>
          </nav>
       </header>
+
