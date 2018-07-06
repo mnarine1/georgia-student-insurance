@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
                exit();
             } elseif ($hashedPwdCheck == true) {
                //Log in the user here
+               $_SESSION['u_acc'] = $row['AccountID'];
                $_SESSION['u_id'] = $row['Username'];
                $_SESSION['u_first'] = $row['FirstName'];
                $_SESSION['u_last'] = $row['LastName'];
@@ -39,6 +40,7 @@ if (isset($_POST['submit'])) {
                $_SESSION['u_city'] = $row['City'];
                $_SESSION['u_state'] = $row['State'];
                $_SESSION['u_zip'] = $row['ZIP'];
+               include_once 'var.inc.php';
                header("Location: ../index.php?login=success");
                exit();
             }
