@@ -255,13 +255,44 @@ header .nav-login a {
 }
 
 .asset {
-   width: 250px;
-   height: 350px;
-   background: #FFF;
+   width: 230px;
+   height: 330px;
+   padding: 10px;
+   background: #EEE;
    border-radius: 10px;
-   box-shadow: 0 10px 20px #0005;
    margin: 10px 10px;
+   float: left;
 }
 
 .asset-wrapper button {
+}
+
+.asset-icon {
+   width: 94px;
+   height: 94px;
+   border: 3px solid black;
+   border-radius: 50%;
+   background: #FFF;
+   margin: 10px auto;
+}
+
+.blank-wrapper {
+   margin: 30px auto 0px;
+   font-size: 30px;
+   font-family: Arial, sans-serif;
+   color: #CCC;
+   font-weight: bold;
+}
+
+textarea {
+   width: 90%;
+}
+
+.asset h2 {
+   font-size: 24px;
+}
+
+h3 {
+   font-family: Arial, sans-serif;
+   
 }
