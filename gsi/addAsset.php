@@ -1,4 +1,5 @@
 <?php
+   $title = "Add an Asset";
    include_once 'header.php';
 ?>
 
