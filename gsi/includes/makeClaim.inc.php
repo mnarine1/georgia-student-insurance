@@ -4,9 +4,9 @@ if (isset($_POST['submit'])) {
    include_once 'dbh.inc.php';
 
    $type = $_POST['type'];
-   $date = $_POST['date'];
-   $locationX = $locationY = $_POST['location'];
-   $desc = "blank";//$_POST['desc'];
+   $date = date('Y')."-".date('m')."-".date('d');
+   $locationX = $locationY = 0;//$_POST['location'];
+   $desc = $_POST['desc'];
    $prev = 0;
    $next = 0;
    $account = $_POST['accID'];
@@ -16,9 +16,9 @@ if (isset($_POST['submit'])) {
       header("Location: ../makeClaim.php?add=empty");
       exit();
    } else {
-      $sql = "INSERT INTO claim (ClaimType, Date, LocationX, LocationY, Description, Prev, Next, AccountID) VALUES ('$type', '$date', '$locationX', '$locationY', '$desc', '$prev', '$next', '$account');";
+      $sql = "INSERT INTO claim (ClaimType, Date, LocationX, LocationY, Description, AccountID) VALUES ('$type', '$date', '$locationX', '$locationY', '$desc', '$account');";
       mysqli_query($conn, $sql);
-      header("Location: ../claims.php?add=success");
+      header("Location: ../claims.php?pay=success");
       exit();
 
    }

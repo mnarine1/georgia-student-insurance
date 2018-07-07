@@ -4,7 +4,7 @@ if (isset($_POST['submit'])) {
    include_once 'dbh.inc.php';
 
    $value = $_POST['value'];
-   $date = $_POST['date'];
+   $date = date('Y')."-".date('m')."-".date('d');
    $cardNum = $_POST['card'];
    $expDateMonth = $_POST['month'];
    $expDateYear = $_POST['year'];
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
          $paid = 1;
          $sql = "INSERT INTO payment (Value, DueDate, isPaid, AccountID) VALUES ('$value', '$date', '$paid', '$account');";
          mysqli_query($conn, $sql);
-         header("Location: ../makePayment?pay=success");
+         header("Location: ../payments.php?pay=success");
          exit();
       }
    }

@@ -37,13 +37,13 @@ if (isset($_POST['submit'])) {
             //Insert the user into the database
             $sql = "INSERT INTO account (Username, Password, FirstName, LastName, Street, City, State, ZIP) VALUES ('$uid', '$pwd', '$first', '$last', '$address', '$city', '$state', '$zip');";
             mysqli_query($conn, $sql);
-            header("Location: ../signup.php?signup=success");
+            header("Location: ../index.php?signup=success");
             exit();
          }
       }
    }
 
 } else {
-   header("Location: ../signup.php");
+   header("Location: ../signup.php?signup=error");
    exit();
 }
