@@ -5,7 +5,7 @@
 
 <section class="main-container">
    <div class="main-wrapper">
-      <h2>Home</h2>
+      <h2>Georgia Student Insurance</h2>
       <?php
          if (isset($_SESSION['u_id'])) {
             echo '<h2>Welome '.$_SESSION['u_first'].' '.$_SESSION['u_last'].'!</h2>';

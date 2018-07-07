@@ -1,5 +1,5 @@
 <?php
-   $title "Signup";
+   $title = "Signup";
    include_once 'header.php';
 ?>
 

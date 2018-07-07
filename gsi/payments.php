@@ -12,17 +12,22 @@
       <?php
          if (isset($_SESSION['u_id'])) {
             include_once 'includes/dbh.inc.php';
-
+            $paid = "Not Paid";
             $sql = "SELECT * FROM payment WHERE AccountID=".$_SESSION['u_acc']."";
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
                while ($row = mysqli_fetch_array($result)) {
-                  if ($row['isPaid'] == 1) {$paid = "Paid";} else {$paid = "Not Paid";}
+                  if ($row['IsPaid'] == 1) {
+                     $paid = "Paid";
+                  } else {
+                     $paid = "Not Paid";
+                  }
+
                   echo "<div class=\"asset\">
                            <h3>Payment</h3>
                            <h3>Value: $".$row['Value']."</h3>
-                           <h3>Date: ".$row['Date']."</h3>
+                           <h3>Date: ".$row['DueDate']."</h3>
                            <h3>".$paid."</h3>
                         </div>";
                }

@@ -6,9 +6,13 @@
 <section class="main-container">
    <div class="main-wrapper">
       <h2>Make a Payment</h2>
+      <?php
+         $amountDue = 100;
+         echo '<h2>Amount Due: $'.$amountDue.'.00</h2>';
+      ?>
+
       <form class="signup-form" action="includes/makePayment.inc.php" method="POST" >
          <input type="hidden" name="value" value="100">
-         <input type="hidden" name="date" value="2001-01-01">
          <input type="text" name="card" placeholder="Card Number" autocomplete="off">
          <div class="exp-wrapper">
             <span>Expiration Date:</span>

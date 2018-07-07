@@ -6,15 +6,15 @@
 <section class="main-container">
    <div class="main-wrapper">
       <h2>Make Claim</h2>
-      <form class="signup-form" action="includes/makeClaim.inc.php" method="POST" >
+      <form class="signup-form" action="includes/makeClaim.inc.php" method="POST" id="claim-form">
          <input list="claimType" name="type" placeholder="Type">
          <datalist id="claimType">
             <option value="Vehicle"></option>
             <option value="Home"></option>
             <option value="Business"></option>
          </datalist>
-         <input type="date" name="date" placeholder="Date of Purchase">
-         <input type="text" name="location" value="" placeholder="location">
+         <!--<input type="text" name="location" value="" placeholder="location"> -->
+         <textarea name="desc" rows="8" cols="50" form="claim-form"></textarea>
 
          <?php
             if (isset($_SESSION['u_id'])) {

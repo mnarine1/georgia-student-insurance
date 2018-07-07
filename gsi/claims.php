@@ -20,7 +20,7 @@
                   echo "<div class=\"asset\">
                            <h2>Claim</h2>
                            <h3>Type: ".$row['ClaimType']."</h3>
-                           <h3>Date: $".$row['Date']."</h3>
+                           <h3>Date: ".$row['Date']."</h3>
                            <h3>Location: ".$row['LocationX'].", ".$row['LocationY']."</h3>
                            <h3>Description: ".$row['Description']."</h3>
                         </div>";
