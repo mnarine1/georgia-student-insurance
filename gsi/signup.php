@@ -1,10 +1,14 @@
-<?php
+<?php session_start();  //Starts the session that allows the user to remain logged in when navigating the website
+//Inserts header elements and meta tags into the page
    $title = "Signup";
    include_once 'header.php';
 ?>
 
 <section class="main-container">
    <div class="main-wrapper">
+      <!-- Form calls the signup.inc.php file when the submit button is clicked.
+           signup.inc.php will receive the form inputs and process them.
+      -->
       <h2>Signup</h2>
       <form class="signup-form" action="includes/signup.inc.php" method="POST">
          <input type="text" name="first" placeholder="First Name">

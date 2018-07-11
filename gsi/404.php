@@ -1,13 +1,12 @@
+<?php session_start();  //Starts the session that allows the user to remain logged in when navigating the website
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
       <link rel="stylesheet" href="css/master.css">
-      <?php       //Retrieves the title variable from each page so that the name of the page is displayed in the tab
-         if (!empty($title)) {
-            echo '<title>'.$title.'</title>';
-         }
-      ?>
+      <title>404 Error</title>
    </head>
    <body>
       <!-- This tag contains the header section that holds the login form, logout and signup links, and page links -->
@@ -19,10 +18,9 @@
                   <!-- If the user is logged in, display the various page links -->
                   <?php
                      if (isset($_SESSION['u_id'])) {
-                        echo '<li><a href="policies.php">Policies</a></li>
-                              <li><a href="assets.php">Assets</a></li>
+                        echo '<li><a href="assets.php">Assets</a></li>
                               <li><a href="claims.php">Claims</a></li>
-                              <li><a href="payments.php">Payments</a></li';
+                              <li><a href="payments.php">Payments</a></li>';
                      }
                   ?>
                </ul>
@@ -49,3 +47,11 @@
             </div>
          </nav>
       </header>
+
+      <section>
+         <h1>404 Error</h1>
+      </section>
+
+      <?php
+         include_once 'footer.php';
+      ?>

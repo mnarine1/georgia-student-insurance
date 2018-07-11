@@ -1,5 +1,5 @@
-<?php
-   $title = "Claim Manager";
+<?php session_start();  //Starts the session that allows the user to remain logged in when navigating the website
+   $title = "Claim Manager";  //Variable used to name page
    include_once 'header.php';
 ?>
 
@@ -8,6 +8,12 @@
       <h2>Claim Manager</h2>
       <a href="makeClaim.php"><button type="button" name="add">+</button></a><br/>
 
+      <!-- First checks if user is logged in.
+           If user is logged in then query the database for all claims that have the same AccountID as the user.
+           The loop will create an html element for each claim found and display its information.
+           If there are no claims found under the user's AccountID, then a message is displayed prompting the user to
+           click the "+" button to make a new claim.
+      -->
       <?php
          if (isset($_SESSION['u_id'])) {
             include_once 'includes/dbh.inc.php';
@@ -33,11 +39,7 @@
 
 </section>
 
-
-
-
-
-
+<!-- Inserts elements in the footer.php file at the end of the page -->
 <?php
    include_once 'footer.php';
 ?>

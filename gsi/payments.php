@@ -1,4 +1,5 @@
-<?php
+<?php session_start();  //Starts the session that allows the user to remain logged in when navigating the website
+ //Inserts header elements and meta tags into the page
    $title = "Payment Manager";
    include_once 'header.php';
 ?>
