@@ -164,6 +164,7 @@ header .nav-login form input {
    line-height: 30px;
 }
 
+
 header .nav-login form input[type="submit"] {
    float: left;
    width: 60px;
@@ -205,6 +206,17 @@ header .nav-login a {
    color: #111;
    line-height: 50px;
    text-align: center;
+}
+
+.main-container h2:nth-child(2) {
+   font-size: 36px;
+}
+
+.main-container .user-info {
+   width: 100%;
+   height: 500px;
+   background: #FFF;
+   margin-top: 100px;
 }
 
 /*signup.php*/
@@ -250,30 +262,63 @@ header .nav-login a {
 .asset-wrapper {
    margin: 0 auto;
    width: 1000px;
-   height: 800px;
+   min-height: 800px;
    background: #FFF;
 }
 
 .asset {
-   width: 230px;
-   height: 330px;
+   width: 210px;
+   height: 230px;
    padding: 10px;
    background: #EEE;
-   border-radius: 10px;
    margin: 10px 10px;
+   border-radius: 10px;
    float: left;
-}
-
-.asset-wrapper button {
+   overflow: hidden;
 }
 
 .asset-icon {
-   width: 94px;
-   height: 94px;
-   border: 3px solid black;
+   width: 96px;
+   height: 96px;
+   border: 2px solid transparent;
    border-radius: 50%;
    background: #FFF;
    margin: 10px auto;
+}
+
+.asset[type="Vehicle"] .asset-icon {
+   background: url("../images/car-26-512.png");
+   background-size: 90px;
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+.asset[type="Home"] .asset-icon {
+   background: url("../images/home-5-512.png");
+   background-size: 80px;
+   background-position: center center;
+   background-repeat: no-repeat;
+}
+.asset[type="Business"] .asset-icon {
+   background: url("../images/banknotes-512.png");
+   background-size: 80px;
+   background-position: 2px 2px;
+   background-repeat: no-repeat;
+}
+
+.asset.add {
+   font-size: 100px;
+   font-weight: bold;
+   color: #999;
+}
+
+.asset.add:hover {
+   background: #CCC;
+}
+
+.asset.add .plus {
+   position: relative;
+   top: 66px;
+   left: 76px;
 }
 
 .blank-wrapper {
@@ -285,15 +330,21 @@ header .nav-login a {
 }
 
 textarea {
-   width: 90%;
+   margin: 0 auto;
 }
 
 .asset h2 {
    font-size: 24px;
 }
 
+.asset span {
+   font-weight: bold;
+}
+
 h3 {
    font-family: Arial, sans-serif;
+   margin-bottom: 10px;
+   font-weight: normal;
 }
 
 input[placeholder="MM"], input[placeholder="YY"] {
@@ -307,4 +358,43 @@ input[placeholder="MM"], input[placeholder="YY"] {
    margin-right: 83px;
    margin-left: 10px;
    line-height: 40px;
+}
+
+.asset .delete {
+   width: calc(100% + 20px);
+   height: 0px;
+   position: relative;
+   bottom: -43px;
+   left: -10px;
+   transition: height 250ms ease-out, bottom 250ms ease-out;
+}
+
+.delete input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background: #F00;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.asset:hover .delete {
+    height: 40px;
+    bottom: -3px;
+}
+
+.delete input:hover {
+    background: #F55;
+}
+
+.Paid {
+   height: 220px;
+   border-bottom: 10px solid green;
+}
+
+.Not {
+   height: 220px;
+   border-bottom: 10px solid red;
 }
