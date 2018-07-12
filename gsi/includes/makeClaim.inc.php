@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
    //Stores form inputs into variables
    $type = $_POST['type'];
    $date = date('Y')."-".date('m')."-".date('d');
-   $locationX = $locationY = 0;//$_POST['location'];
+   $location = $_POST['location'];
    $desc = $_POST['desc'];
    $prev = 0;
    $next = 0;
@@ -29,13 +29,13 @@ if (isset($_POST['submit'])) {
     * If empty, then return to form and display error message in URL
     * If not empty, then continue
     */
-   if (empty($type) || empty($date) || empty($desc)) {
+   if (empty($type) || empty($date) || empty($desc) || empty($location)) {
       //return to makeClaim form with error message
       header("Location: ../makeClaim.php?add=empty");
       exit();  //Stops script from running
    } else {
       //SQL code
-      $sql = "INSERT INTO claim (ClaimType, Date, LocationX, LocationY, Description, AccountID) VALUES ('$type', '$date', '$locationX', '$locationY', '$desc', '$account');";
+      $sql = "INSERT INTO claim (ClaimType, Date, Location, Description, AccountID) VALUES ('$type', '$date', '$location', '$desc', '$account');";
       //Insert into connected database
       mysqli_query($conn, $sql);
       //return to claims page with message of success
