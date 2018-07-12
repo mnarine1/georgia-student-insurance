@@ -7,9 +7,9 @@
 
 <section class="main-container">
    <div class="asset-wrapper">
+      <br>
       <h2>Payment Manager</h2>
-      <a href="makePayment.php"><button type="button" name="add">+</button></a><br/>
-
+      <br>
       <?php
          if (isset($_SESSION['u_id'])) {
             include_once 'includes/dbh.inc.php';
@@ -19,30 +19,27 @@
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
                while ($row = mysqli_fetch_array($result)) {
-                  if ($row['IsPaid'] == 1) {
+                  if ($row['IsPaid'] > 0) {
                      $paid = "Paid";
                   } else {
                      $paid = "Not Paid";
                   }
 
-                  echo "<div class=\"asset\">
-                           <h3>Payment</h3>
-                           <h3>Value: $".$row['Value']."</h3>
-                           <h3>Date: ".$row['DueDate']."</h3>
-                           <h3>".$paid."</h3>
+                  echo "<div class=\"asset ".$paid."\">
+                           <h2>Payment</h2>
+                           <h3><span>Value:</span> $".$row['Value']."</h3>
+                           <h3><span>Date:</span> ".$row['DueDate']."</h3>
+                           <h3><span>Status:</span> ".$paid."</h3>
                         </div>";
                }
             } else {
-               echo '<h2="blank-wrapper">Click the + Button to make a Payment</h2>';
+               echo '<h3 style="text-align:center;">Click the + Button to make a Payment</h3>';
             }
          }
       ?>
-
+      <a href="makePayment.php"><div class="asset add"><span class="plus">+</span></div></a>
+   </div>
 </section>
-
-
-
-
 
 <?php
    include_once 'footer.php';

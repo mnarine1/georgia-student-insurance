@@ -9,10 +9,14 @@
       <h2>Georgia Student Insurance</h2>
       <?php       //If the user is logged in, display the welcome message with their name
          if (isset($_SESSION['u_id'])) {
-            echo '<h2>Welome '.$_SESSION['u_first'].' '.$_SESSION['u_last'].'!</h2>';
+            echo '<h2>Welome '.$_SESSION['u_first'].' '.$_SESSION['u_last'].'!</h2>
+                  <div class="user-info">
+
+                  </div>';
          }
       ?>
    </div>
+   
 </section>
 
 <!-- Inserts elements in the footer.php file at the end of the page -->

@@ -17,8 +17,8 @@
             <option value="Home"></option>
             <option value="Business"></option>
          </datalist>
-         <!--<input type="text" name="location" value="" placeholder="location"> -->
-         <textarea name="desc" rows="8" cols="50" form="claim-form"></textarea>
+         <input type="text" name="location" value="" placeholder="location">
+         <textarea name="desc" rows="8" cols="53" form="claim-form"></textarea>
          <!-- Hidden form input that submits the user's account ID in so the information is stored in the correct account -->
          <?php
             if (isset($_SESSION['u_id'])) {

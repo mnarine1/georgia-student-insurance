@@ -5,8 +5,9 @@
 
 <section class="main-container">
    <div class="asset-wrapper">
+      <br>
       <h2>Claim Manager</h2>
-      <a href="makeClaim.php"><button type="button" name="add">+</button></a><br/>
+      <br>
 
       <!-- First checks if user is logged in.
            If user is logged in then query the database for all claims that have the same AccountID as the user.
@@ -25,18 +26,19 @@
                while ($row = mysqli_fetch_array($result)) {
                   echo "<div class=\"asset\">
                            <h2>Claim</h2>
-                           <h3>Type: ".$row['ClaimType']."</h3>
-                           <h3>Date: ".$row['Date']."</h3>
-                           <h3>Location: ".$row['LocationX'].", ".$row['LocationY']."</h3>
-                           <h3>Description: ".$row['Description']."</h3>
+                           <h3><span>Type:</span> ".$row['ClaimType']."</h3>
+                           <h3><span>Date:</span> ".$row['Date']."</h3>
+                           <h3><span>Location:</span> ".$row['Location']."</h3>
+                           <h3><span>Description:</span> ".$row['Description']."</h3>
                         </div>";
                }
             } else {
-               echo '<h2="blank-wrapper">Click the + Button to make a Claim<h2>';
+               echo '<h3 style="text-align:center;">Click the + Button to make a Claim</h3>';
             }
          }
       ?>
-
+      <a href="makeClaim.php"><div class="asset add"><span class="plus">+</span></div></a>
+   </div>
 </section>
 
 <!-- Inserts elements in the footer.php file at the end of the page -->

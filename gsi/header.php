@@ -22,13 +22,12 @@
                         echo '<li><a href="policies.php">Policies</a></li>
                               <li><a href="assets.php">Assets</a></li>
                               <li><a href="claims.php">Claims</a></li>
-                              <li><a href="payments.php">Payments</a></li';
+                              <li><a href="payments.php">Payments</a></li>';
                      }
                   ?>
                </ul>
                <div class="nav-login">
                   <?php
-                     //session_start();
                      //If the user is logged in, then display the logout button
                      //If the user is not logged in, then display the login form and signup link
                      if (isset($_SESSION['u_id'])) {

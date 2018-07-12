@@ -5,9 +5,9 @@
 
 <section class="main-container">
    <div class="asset-wrapper">
+      <br>
       <h2>Asset Manager</h2>
-      <a href="addAsset.php"><button type="button" name="add">+</button></a><br/>
-
+      <br>
       <!-- First checks if user is logged in.
            If user is logged in then query the database for all assets that have the same AccountID as the user.
            The loop will create an html element for each asset found and display its information.
@@ -23,11 +23,11 @@
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
                while ($row = mysqli_fetch_array($result)) {
-                  echo "<div class=\"asset\" asset-ID=\"".$row['AssetID']."\">
+                  echo "<div class=\"asset\" asset-ID=\"".$row['AssetID']."\" type=\"".$row['AssetType']."\">
                            <div class=\"asset-icon\"></div>
-                           <h3>Type: ".$row['AssetType']."</h3>
-                           <h3>Value: $".$row['Value']."</h3>
-                           <h3>Date: ".$row['Date']."</h3>
+                           <h3><span>Type:</span> ".$row['AssetType']."</h3>
+                           <h3><span>Value:</span> $".$row['Value']."</h3>
+                           <h3><span>Date:</span> ".$row['Date']."</h3>
                            <div class=\"delete\">
                               <form class=\"\" action=\"includes/deleteAsset.inc.php\" method=\"POST\">
                                  <input type=\"hidden\" name=\"assetID\" value=\"".$row['AssetID']."\">
@@ -37,11 +37,12 @@
                         </div>";
                }
             } else {
-               echo '<h2="blank-wrapper">Click the + Button to add an Asset</h2>';
+               echo '<h3 style="text-align:center;">Click the + Button to add an Asset</h3>';
             }
          }
       ?>
-
+      <a href="addAsset.php"><div class="asset add"><span class="plus">+</span></div></a>
+   </div>
 </section>
 
 <!-- Inserts elements in the footer.php file at the end of the page -->
