@@ -33,11 +33,10 @@
                         </div>";
                }
             } else {
-               echo '<h3 style="text-align:center;">Click the + Button to make a Claim</h3>';
+               echo '<h3 style="text-align:center;">To make a claim, go to your policies.</h3>';
             }
          }
       ?>
-      <a href="makeClaim.php"><div class="asset add"><span class="plus">+</span></div></a>
    </div>
 </section>
 

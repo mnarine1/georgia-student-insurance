@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <link rel="stylesheet" href="css/master.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" charset="utf-8"></script>
       <?php       //Retrieves the title variable from each page so that the name of the page is displayed in the tab
          if (!empty($title)) {
             echo '<title>'.$title.'</title>';

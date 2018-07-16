@@ -41,6 +41,7 @@
             }
          }
       ?>
+
       <a href="addAsset.php"><div class="asset add"><span class="plus">+</span></div></a>
    </div>
 </section>

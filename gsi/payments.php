@@ -33,11 +33,10 @@
                         </div>";
                }
             } else {
-               echo '<h3 style="text-align:center;">Click the + Button to make a Payment</h3>';
+               echo '<h3 style="text-align:center;">To make a payment, go to your policies.</h3>';
             }
          }
       ?>
-      <a href="makePayment.php"><div class="asset add"><span class="plus">+</span></div></a>
    </div>
 </section>
 
