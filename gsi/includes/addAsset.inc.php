@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
          exit();  //Stops script from running
       } else {
          //SQL code
-         $sql = "INSERT INTO asset (AssetType, Value, Date, Prev, Next, AccountID) VALUES ('$type', '$value', '$date', '$prev', '$next', '$account');";
+         $sql = "INSERT INTO asset (AssetType, Value, Date, AccountID) VALUES ('$type', '$value', '$date', '$account');";
          //Insert into connected database
          mysqli_query($conn, $sql);
          //return to asset page with message of success

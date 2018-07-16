@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
    $prev = 0;
    $next = 0;
    $account = $_POST['accID'];
+   $pID = $_POST['policyID'];
 
    //Error Handlers
    /*
@@ -35,11 +36,11 @@ if (isset($_POST['submit'])) {
       exit();  //Stops script from running
    } else {
       //SQL code
-      $sql = "INSERT INTO claim (ClaimType, Date, Location, Description, AccountID) VALUES ('$type', '$date', '$location', '$desc', '$account');";
+      $sql = "INSERT INTO claim (ClaimType, Date, Location, Description, AccountID, PolicyID) VALUES ('$type', '$date', '$location', '$desc', '$account', '$pID');";
       //Insert into connected database
       mysqli_query($conn, $sql);
       //return to claims page with message of success
-      header("Location: ../claims.php?pay=success");
+      header("Location: ../claims.php?claim=success");
       exit();  //Stops script from running
    }
 } else {

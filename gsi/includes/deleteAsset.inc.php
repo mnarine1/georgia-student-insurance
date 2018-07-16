@@ -17,7 +17,7 @@ if (isset($_POST['delete'])) {
    $assetID = $_POST['assetID'];
 
    //SQL code
-   $sql = "SELECT * FROM asset WHERE AssetID='$assetID'";
+   $sql = "SELECT * FROM asset WHERE AssetID=".$assetID.";";
 
    //Get result from database
    $result = mysqli_query($conn, $sql);
@@ -33,9 +33,17 @@ if (isset($_POST['delete'])) {
       exit();  //Stops script from running
    } else {
       //SQL code
-      $sql = "DELETE FROM asset WHERE AssetID='$assetID'";
+      $sql = "DELETE FROM asset WHERE AssetID=".$assetID.";";
       //Delete from database
       mysqli_query($conn, $sql);
+
+      $sql = "SELECT * FROM policy WHERE Asset1=".$assetID." OR Asset2=".$assetID." OR Asset3=".$assetID.";";
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+      if ($resultCheck > 0) {
+         $sql = "UPDATE policy SET IsActive=3 WHERE Asset1=".$assetID." OR Asset2=".$assetID." OR Asset3=".$assetID.";";
+         $result = mysqli_query($conn, $sql);
+      }
       //Return user to the assets page and display message of successful deletion
       header("Location: ../assets.php?delete=success");
       exit();  //Stops script from running
