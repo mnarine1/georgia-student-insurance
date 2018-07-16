@@ -398,3 +398,25 @@ input[placeholder="MM"], input[placeholder="YY"] {
    height: 220px;
    border-bottom: 10px solid red;
 }
+
+.checked {
+   box-shadow: 0 0 0 5px #0FF;
+}
+
+input[disabled="disabled"] {
+   background: red;
+}
+
+.code1 {
+   height: 220px;
+   border-bottom: 10px solid green;
+}
+
+.code2 {
+   height: 220px;
+   border-bottom: 10px solid orange;
+}
+.code3 {
+   height: 220px;
+   border-bottom: 10px solid red;
+}
