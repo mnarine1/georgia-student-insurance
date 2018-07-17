@@ -11,13 +11,14 @@
          if (isset($_POST['submit'])) {
             $amountDue = $_POST['price'];
             $amountDue = number_format((float)$amountDue, 2, '.', '');
+            echo '<input type="hidden" name="policyID" value="'.$_POST['policyID'].'" form="payment">';
          }
          echo '<h2>Amount Due: $'.$amountDue.'</h2>';
       ?>
       <!-- Form calls the makePayment.inc.php file when the submit button is clicked.
            makePayment.inc.php will receive the form inputs and process them.
       -->
-      <form class="signup-form" action="includes/makePayment.inc.php" method="POST" autocomplete="off">
+      <form class="signup-form" action="includes/makePayment.inc.php" method="POST" autocomplete="off" id="payment">
          <input type="text" name="card" placeholder="Card Number" autocomplete="off">
          <div class="exp-wrapper">
             <span>Expiration Date:</span>

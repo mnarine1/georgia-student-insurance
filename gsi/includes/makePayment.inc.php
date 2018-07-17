@@ -21,10 +21,9 @@ if (isset($_POST['submit'])) {
    $expDateMonth = $_POST['month'];
    $expDateYear = $_POST['year'];
    $code = $_POST['code'];
-   $prev = 0;
-   $next = 0;
    $paid = 0;
    $account = $_POST['accID'];
+   $polID = $_POST['policyID'];
 
    //Error Handlers
    /*
@@ -49,7 +48,7 @@ if (isset($_POST['submit'])) {
       } else {
          $paid = 1; //Sets isPaid to true
          //SQL code
-         $sql = "INSERT INTO payment (Value, DueDate, isPaid, AccountID) VALUES ('$value', '$date', '$paid', '$account');";
+         $sql = "INSERT INTO payment (Value, DueDate, isPaid, AccountID, PolicyID) VALUES ('$value', '$date', '$paid', '$account', '$polID');";
          //Insert into connected database
          mysqli_query($conn, $sql);
          //return to payments page with message of successful payment
